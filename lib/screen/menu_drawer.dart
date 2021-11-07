@@ -20,8 +20,8 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  'Health Checks',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               Padding(
@@ -34,8 +34,8 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Sign Up',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  'For Hospitals',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               Padding(
@@ -48,8 +48,8 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Read',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  'Consultation',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               Padding(
@@ -62,15 +62,15 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Contact Us',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  'Corporate Health',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Copyright © 2021 | DBestech',
+                    'Copyright © 2021 | Mfine',
                     style: TextStyle(
                       color: Colors.blueGrey.shade300,
                       fontSize: 14,

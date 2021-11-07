@@ -1,23 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medical_webapp/screen/widgets/responisve.dart';
 import 'package:medical_webapp/screen_config.dart';
 
 class CategoryTop extends StatelessWidget {
- final Color colour = Color(0xFFffdae0) ;
- final String title;
- final String imgurl;
- final String subtitle;
- CategoryTop({required this.title,required this.imgurl,required this.subtitle,});
+  final Color colour = Color(0xFFffdae0);
+  final String title;
+  final String imgurl;
+  final String subtitle;
+  CategoryTop({
+    required this.title,
+    required this.imgurl,
+    required this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Stack(
       clipBehavior: Clip.none,
       children: [
         Container(
-          height: 13.88*SizeConfig.heightMultiplier,
-          width: 60.90*SizeConfig.widthMultiplier,
-          margin: EdgeInsets.only(left: 12.18*SizeConfig.widthMultiplier),
+          height: ResponsiveWidget.isSmallScreen(context)
+              ? screenSize.height / 5
+              : screenSize.height * 0.24,
+          width: ResponsiveWidget.isSmallScreen(context)
+              ? screenSize.width / 2.2
+              : screenSize.width / 2.5,
+          margin: EdgeInsets.only(
+              left: ResponsiveWidget.isSmallScreen(context)
+                  ? screenSize.width / 35
+                  : 12.18 * SizeConfig.widthMultiplier),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: colour,
@@ -25,18 +38,25 @@ class CategoryTop extends StatelessWidget {
           ),
         ),
         Positioned(
-            height: 9.02*SizeConfig.heightMultiplier,
-            width: 15.83*SizeConfig.widthMultiplier,
-            right: -0/24*SizeConfig.widthMultiplier,
-            top: -0.902*SizeConfig.heightMultiplier,
-            child: Image.asset("$imgurl")),
+            height: 9.5 * SizeConfig.heightMultiplier,
             
+            width: 15.83 * SizeConfig.widthMultiplier,
+            
+            right: ResponsiveWidget.isSmallScreen(context)
+            ? -2.8 * SizeConfig.widthMultiplier
+            : SizeConfig.widthMultiplier*0,
+            
+            top: -1.1 * SizeConfig.heightMultiplier,
+            child: Image.asset("$imgurl")),
+        
         Container(
-          margin: EdgeInsets.fromLTRB(18.27*SizeConfig.widthMultiplier, 
-          4.87*SizeConfig.heightMultiplier, 0, 0),
+          margin: EdgeInsets.fromLTRB( ResponsiveWidget.isSmallScreen(context)? 8 * SizeConfig.widthMultiplier
+          : SizeConfig.widthMultiplier*18,
+            
+            2.5 * SizeConfig.heightMultiplier, 0, 0),
           // color: Colors.indigo,
-          height: 9.72*SizeConfig.heightMultiplier,
-          width: 30.45*SizeConfig.widthMultiplier,
+          height: 11 * SizeConfig.heightMultiplier,
+          width: 30.45 * SizeConfig.widthMultiplier,
           child: Column(
             children: [
               Container(
@@ -45,23 +65,27 @@ class CategoryTop extends StatelessWidget {
                     "$title",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
-                        fontSize: 1.38*SizeConfig.textMultiplier),
+                        fontSize: ResponsiveWidget.isSmallScreen(context)
+                            ? SizeConfig.textMultiplier *2
+                            : SizeConfig.textMultiplier * 1.3),
                   )),
               SizedBox(
-                height: 0.34*SizeConfig.heightMultiplier,
+                height: 0.34 * SizeConfig.heightMultiplier,
               ),
               Container(
-                // margin: EdgeInsets.only(b),
-                height: 3.81*SizeConfig.heightMultiplier,
-                width: 36.54*SizeConfig.widthMultiplier,
-                
-                // color:Colors.red,
+                  // margin: EdgeInsets.only(b),
+                  height: 3.81 * SizeConfig.heightMultiplier,
+                  width: 36.54 * SizeConfig.widthMultiplier,
+
+                  // color:Colors.red,
                   alignment: Alignment.topLeft,
                   child: Text(
                     "$subtitle",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
-                        fontSize: 1.3*SizeConfig.textMultiplier,
+                        fontSize: ResponsiveWidget.isSmallScreen(context)
+                            ? SizeConfig.textMultiplier *2
+                            : SizeConfig.textMultiplier * 1.3,
                         color: Colors.blue[600]),
                   ))
             ],
@@ -71,6 +95,3 @@ class CategoryTop extends StatelessWidget {
     );
   }
 }
-                      
-                    
-                    

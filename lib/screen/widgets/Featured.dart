@@ -93,11 +93,15 @@ class Featured extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  height: 32.63*SizeConfig.heightMultiplier,
-                  width: 60.901*SizeConfig.widthMultiplier,
+                  // height: 32.63*SizeConfig.heightMultiplier,
+                  // width: 60.901*SizeConfig.widthMultiplier,
                   left: 24.36*SizeConfig.widthMultiplier,
                   top: 6.94*SizeConfig.heightMultiplier,
-                  child: Image.asset("assets/doctor.png"))
+                  child: Image.asset("assets/doctor.png",
+                   height: 32.63*SizeConfig.heightMultiplier,
+                  width: 60.901*SizeConfig.widthMultiplier,
+                  
+                  ))
 
                 ],
              

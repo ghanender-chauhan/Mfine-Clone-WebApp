@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                   )
                   ),
                   SizedBox(height: 3.47*SizeConfig.heightMultiplier,),
-                  Category(),
+                  Category(screenSize: screenSize,),
                   Featured(),
                   Consult(),
                   HealthPortion(),
