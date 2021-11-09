@@ -1,43 +1,44 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-class ResponsiveWidget extends StatelessWidget {
-  final Widget largeScreen;
-  final Widget? mediumScreen;
-  final Widget? smallScreen;
+class Responsive extends StatelessWidget {
+  final Widget mobile;
+  final Widget tablet;
+  final Widget desktop;
 
-  const ResponsiveWidget({
+  const Responsive({
     Key? key,
-    required this.largeScreen,
-    this.mediumScreen,
-    this.smallScreen,
+    required this.mobile,
+    required this.tablet,
+    required this.desktop,
   }) : super(key: key);
 
-  static bool isSmallScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width < 800;
-  }
+  static bool isMobile(BuildContext context) =>
+      MediaQuery.of(context).size.width < 800;
 
-  static bool isLargeScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width > 1200;
-  } 
+  static bool istablet(BuildContext context) =>
+     MediaQuery.of(context).size.width >= 800 &&
+      MediaQuery.of(context).size.width < 1200;
 
-  static bool isMediumScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width >= 800 &&
-        MediaQuery.of(context).size.width <= 1200;
-  }
+
+  static bool isDesktop(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 1200;   
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth > 1200) {
-          return largeScreen;
-        } else if (constraints.maxWidth <= 1200 &&
-            constraints.maxWidth >= 800) {
-          return mediumScreen ?? largeScreen;
-        } else {
-          return smallScreen ?? largeScreen;
+      builder: (context,constraints){
+        if(constraints.maxWidth >= 1200){
+          return desktop;
+        } else if(constraints.maxWidth >=800){
+          return tablet;
+        }else{
+          return mobile;
         }
       },
+      
     );
   }
 }

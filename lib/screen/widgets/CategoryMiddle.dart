@@ -17,7 +17,7 @@ CategoryMiddle({required this.title, required this.subtitle, required this.imgur
       clipBehavior: Clip.none,
       children: [
       Container(
-        margin: EdgeInsets.only(left: 14.61*SizeConfig.widthMultiplier, 
+        margin: EdgeInsets.only(left: 10*SizeConfig.widthMultiplier, 
         top: 2.08*SizeConfig.heightMultiplier),
         height: 17.36*SizeConfig.heightMultiplier,
         width: 42.63*SizeConfig.widthMultiplier,
@@ -53,7 +53,7 @@ CategoryMiddle({required this.title, required this.subtitle, required this.imgur
                             color: Color(0xFFbf80ff)),
                       ))
                 ],
-              ),
+          ),
         ),
         
         
