@@ -17,10 +17,11 @@ CategoryMiddle({required this.title, required this.subtitle, required this.imgur
       clipBehavior: Clip.none,
       children: [
       Container(
-        margin: EdgeInsets.only(left: 10*SizeConfig.widthMultiplier, 
+        margin: EdgeInsets.only(
+        left: 10*SizeConfig.heightMultiplier, 
         top: 2.08*SizeConfig.heightMultiplier),
-        height: 17.36*SizeConfig.heightMultiplier,
-        width: 42.63*SizeConfig.widthMultiplier,
+        height: 15*SizeConfig.heightMultiplier,
+        width: 20*SizeConfig.heightMultiplier,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Color(0xFFf2e6ff),
@@ -61,9 +62,9 @@ CategoryMiddle({required this.title, required this.subtitle, required this.imgur
       Positioned(
         child: Image.asset("$imgurl"),
         height: 8.33*SizeConfig.heightMultiplier,
-        width: 14.61*SizeConfig.widthMultiplier,
-        left: 44.45*SizeConfig.widthMultiplier,
-        top: 1.52*SizeConfig.heightMultiplier,
+        width: 10*SizeConfig.heightMultiplier,
+        left: 21*SizeConfig.heightMultiplier,
+        top: -1*SizeConfig.heightMultiplier,
       ),
     ]);
   }

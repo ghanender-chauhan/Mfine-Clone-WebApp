@@ -4,12 +4,15 @@ import 'package:medical_webapp/screen/Consultation.dart';
 import 'package:medical_webapp/screen/Health_portion.dart';
 import 'package:medical_webapp/screen/Self_checkbar.dart';
 import 'package:medical_webapp/screen/menu_drawer.dart';
+import 'package:medical_webapp/screen/tabcategory.dart';
 import 'package:medical_webapp/screen/widgets/Featured.dart';
 import 'package:medical_webapp/screen/widgets/category.dart';
 import 'package:medical_webapp/screen/widgets/responisve.dart';
 // import 'package:medical_webapp/screen/widgets/category_card.dart';
 import 'package:medical_webapp/screen/widgets/top_bar_contents.dart';
 import 'package:medical_webapp/screen_config.dart';
+
+import 'TabFeatured.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -145,8 +148,63 @@ class _HomeScreenMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return  SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+              alignment: Alignment.topCenter,
+              // padding: EdgeInsets.fromLTRB(200, 40, 0, 20),
+              child: Stack(
+                children: [
+                  Image.asset("assets/background.png"),
+                  Padding(
+                    padding:  EdgeInsets.fromLTRB(18.27*SizeConfig.widthMultiplier, 8.33*SizeConfig.heightMultiplier, 0, 0),
+                    child: Text("MFine - one app for all \nyour healthcare needs",
+                    style: TextStyle(
+                      fontSize: 2.08*SizeConfig.textMultiplier,
+                      color: Colors.white
+                    ),),
+                  ),
+                  Padding(
+                    padding:  EdgeInsets.fromLTRB(10.96*SizeConfig.widthMultiplier, 16.31*SizeConfig.heightMultiplier, 0, 3.47*SizeConfig.heightMultiplier),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Download Mfine App",
+                        style: TextStyle(fontSize: 1.73*SizeConfig.textMultiplier),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                                color: Colors.red,
+                                width: 1,
+                                style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(50)),
+                        primary: Colors.redAccent,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 6.09*SizeConfig.widthMultiplier, vertical: 1.38*SizeConfig.heightMultiplier),
+                        textStyle: TextStyle(
+                            fontSize: 2.08*SizeConfig.textMultiplier, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  
+                ],
+              )
+              ),
+              SizedBox(height: 3.47*SizeConfig.heightMultiplier,),
+              TabCategory(),
+              TabFeatured(),
+              Consult(),
+              HealthPortion(),
+              SelfCheck(),
+    
+      ],
+          // alignment: Alignment.topCenter,
+         
+              
+    
+              ),
     );
   }
 }

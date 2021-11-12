@@ -18,7 +18,8 @@ class ConsultationCard extends StatelessWidget {
     return Stack(
       children: [
         Positioned(height: 4.16*SizeConfig.heightMultiplier, 
-        width: 7.30*SizeConfig.widthMultiplier, top: 1.04*SizeConfig.heightMultiplier, 
+        width: 7.30*SizeConfig.widthMultiplier, 
+        top: 1.04*SizeConfig.heightMultiplier, 
         child: Image.asset(imgUrl)),
         Container(
 
@@ -29,7 +30,8 @@ class ConsultationCard extends StatelessWidget {
               children: [
                 Container(
                   // margin: EdgeInsets.only(right: 50),
-                  padding: EdgeInsets.only(left: 2.43*SizeConfig.widthMultiplier),
+                  padding: EdgeInsets.only(
+                  left: 2.43*SizeConfig.widthMultiplier),
                   width: 21.92*SizeConfig.widthMultiplier,
                   // color: Colors.amber,
                   child: Text(

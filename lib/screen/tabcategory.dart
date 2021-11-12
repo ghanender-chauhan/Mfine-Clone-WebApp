@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medical_webapp/screen/widgets/CategoryMiddle.dart';
 // import 'package:medical_webapp/screen/widgets/CategoryBottom.dart';
 import 'package:medical_webapp/screen/widgets/CategoryTop.dart';
 import 'package:medical_webapp/screen_config.dart';
 // import 'package:medical_webapp/screen/widgets/category_card.dart';
 
-import 'CategoryMiddle.dart';
 
-class Category extends StatelessWidget {
-  const Category({Key? key}) : super(key: key);
+
+class TabCategory extends StatelessWidget {
+  const TabCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,8 @@ class Category extends StatelessWidget {
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
-                    padding: EdgeInsets.only(left: 14.61*SizeConfig.widthMultiplier,
+                    padding: EdgeInsets.only(
+                    left: 8*SizeConfig.widthMultiplier,
                      bottom: 1.736*SizeConfig.heightMultiplier),
                     child: Text("What would you like to do today",
                         style: GoogleFonts.acme(
@@ -39,7 +41,7 @@ class Category extends StatelessWidget {
                 children: [
                 
                    Padding(
-                     padding:  EdgeInsets.only(left: 2*SizeConfig.heightMultiplier),
+                     padding:  EdgeInsets.only(left: 0*SizeConfig.heightMultiplier),
                      child: CategoryTop(
                           // colour:Color(0xFFffdae0),
                           title: "Consult\nDoctors Online",
@@ -48,9 +50,9 @@ class Category extends StatelessWidget {
                    ),
                     
                   
-                  SizedBox(
-                    width: 8*SizeConfig.heightMultiplier,
-                  ),
+                  // SizedBox(
+                  //   width: 3*SizeConfig.heightMultiplier,
+                  // ),
                   
                        CategoryTop(
                       // colour: Color(0xFFffdae0), 
@@ -96,7 +98,7 @@ class Category extends StatelessWidget {
                       subtitle: '300 off on Second Consultation',)
                   ),
                   SizedBox(
-                    width: 8.52*SizeConfig.widthMultiplier,
+                    width: 0*SizeConfig.heightMultiplier,
                   ),
                   Padding(
                     padding:  EdgeInsets.fromLTRB(1*SizeConfig.widthMultiplier, 0.55*SizeConfig.heightMultiplier,1*SizeConfig.widthMultiplier, 0.55*SizeConfig.heightMultiplier),

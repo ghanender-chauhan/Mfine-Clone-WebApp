@@ -16,8 +16,8 @@ class CategoryTop extends StatelessWidget {
       children: [
         Container(
           height: 13.88*SizeConfig.heightMultiplier,
-          width: 60.90*SizeConfig.widthMultiplier,
-          margin: EdgeInsets.only(left: 12.18*SizeConfig.widthMultiplier),
+          width: 30*SizeConfig.heightMultiplier,
+          margin: EdgeInsets.only(left: 8*SizeConfig.heightMultiplier),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: colour,
@@ -27,7 +27,7 @@ class CategoryTop extends StatelessWidget {
         Positioned(
             height: 9.02*SizeConfig.heightMultiplier,
             width: 15.83*SizeConfig.widthMultiplier,
-            right: -0/24*SizeConfig.widthMultiplier,
+            right: 0*SizeConfig.heightMultiplier,
             top: -0.902*SizeConfig.heightMultiplier,
             child: Image.asset("$imgurl")),
             
@@ -36,7 +36,7 @@ class CategoryTop extends StatelessWidget {
           4.87*SizeConfig.heightMultiplier, 0, 0),
           // color: Colors.indigo,
           height: 9.72*SizeConfig.heightMultiplier,
-          width: 30.45*SizeConfig.widthMultiplier,
+          width: 25*SizeConfig.heightMultiplier,
           child: Column(
             children: [
               Container(
